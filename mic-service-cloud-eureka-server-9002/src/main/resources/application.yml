@@ -1,0 +1,15 @@
+server:
+  port: 9002      #官方默认端口
+eureka:
+  instance:
+    hostname: eureka9002.com
+  server:
+    enable-self-preservation: false  #关闭自我保护
+    eviction-interval-timer-in-ms: 60000  #清理间隔 （单位毫秒  60*1000）
+
+  client:
+    register-with-eureka: false      #配置服务注册中心是否以自己为客户端进行注册(配置false)
+    fetch-registry: false       #是否取得注册信息(配置false)
+    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+       defaultZone: http://eureka9000.com:9000/eureka,http://eureka9001.com:9001/eureka,http://eureka9002.com:9002/eureka
