@@ -17,6 +17,7 @@
         <module>mic-service-cloud-dept-provider-7002</module>
         <module>mic-service-cloud-dept-provider-7003</module>
         <module>mic-service-cloud-user-comsumer-8000</module>
+        <module>mic-service-cloud-user-comsumer-feign</module>
         <module>mic-service-cloud-eureka-server-9000</module>
         <module>mic-service-cloud-eureka-server-9001</module>
         <module>mic-service-cloud-eureka-server-9002</module>
