@@ -21,7 +21,7 @@ public class UserController {
 
     @RequestMapping("/get")
     @ResponseBody
-    public Object get(int page,int rows){
+    public String get(int page,int rows){
         log.info("----------8002----------");
         return "8002";
     }

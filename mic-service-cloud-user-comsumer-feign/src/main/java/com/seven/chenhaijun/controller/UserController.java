@@ -1,9 +1,9 @@
 package com.seven.chenhaijun.controller;
 
+import com.seven.chenhaijun.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by ${chenhaijun} on 2018/11/23.
@@ -11,21 +11,12 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
-    private String USER_URL_PREFIX = "http://MIC-USER-PROVIDER";
-
-    private String DEPT_URL_PREFIX = "http://MIC-DEPT-PROVIDER";
-
     @Autowired
-    RestTemplate restTemplate;
+    private UserService userService;
 
     @RequestMapping("/getUser")
     public Object get(int page,int rows){
-        return restTemplate.getForObject(USER_URL_PREFIX + "/user/get?page="+page+"&rows="+rows, String.class);
+        return userService.findUserList(page,rows);
     }
 
-    @RequestMapping("/getDept")
-    public Object getDept(){
-        return restTemplate.getForObject(DEPT_URL_PREFIX + "/dept/get", String.class);
-    }
 }

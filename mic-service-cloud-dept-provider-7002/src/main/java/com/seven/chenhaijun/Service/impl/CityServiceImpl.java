@@ -1,6 +1,6 @@
 package com.seven.chenhaijun.service.impl;
 
-import com.seven.chenhaijun.entity.City;
+import com.seven.chenhaijun.entity.CityDto;
 import com.seven.chenhaijun.mapper.CityMapper;
 import com.seven.chenhaijun.service.ICityService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2018-11-23
  */
 @Service
-public class CityServiceImpl extends ServiceImpl<CityMapper, City> implements ICityService {
+public class CityServiceImpl extends ServiceImpl<CityMapper, CityDto> implements ICityService {
 
 }

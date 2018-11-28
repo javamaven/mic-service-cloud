@@ -19,12 +19,6 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <!--mybatis-plus 引入 -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.0.1</version>
-        </dependency>
     </dependencies>
 
 

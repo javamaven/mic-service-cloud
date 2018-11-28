@@ -1,6 +1,6 @@
 package com.seven.chenhaijun.service;
 
-import com.seven.chenhaijun.entity.City;
+import com.seven.chenhaijun.entity.CityDto;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author chenhaijun
  * @since 2018-11-23
  */
-public interface ICityService extends IService<City> {
+public interface ICityService extends IService<CityDto> {
 
 }
