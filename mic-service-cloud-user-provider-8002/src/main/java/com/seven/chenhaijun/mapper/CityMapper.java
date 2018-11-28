@@ -1,7 +1,7 @@
 package com.seven.chenhaijun.mapper;
 
-import com.seven.chenhaijun.entity.CityDto;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.seven.chenhaijun.entity.City;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author chenhaijun
  * @since 2018-11-23
  */
-public interface CityMapper extends BaseMapper<CityDto> {
+public interface CityMapper extends BaseMapper<City> {
 
 }

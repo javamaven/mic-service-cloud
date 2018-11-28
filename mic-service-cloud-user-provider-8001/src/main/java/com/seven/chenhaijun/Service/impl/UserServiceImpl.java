@@ -2,7 +2,7 @@ package com.seven.chenhaijun.Service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.seven.chenhaijun.Service.IUserService;
-import com.seven.chenhaijun.entity.UserDto;
+import com.seven.chenhaijun.entity.User;
 import com.seven.chenhaijun.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,12 @@ public class UserServiceImpl implements IUserService {
     private UserMapper userMapper;
 
     @Override
-    public List<UserDto> findAllUser(Page page) {
+    public User getUser(Integer id) {
+        return userMapper.selectById(id);
+    }
+
+    @Override
+    public List<User> findAllUser(Page page) {
         return userMapper.findAll(page);
     }
 }
