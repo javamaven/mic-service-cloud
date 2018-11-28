@@ -27,17 +27,19 @@ public class UserController {
 
     @RequestMapping("/get")
     @ResponseBody
-    public UserDto get(int id){
+    public UserDto get(Integer id){
         User user = userService.getUser(id);
         UserDto result = new UserDto();
-        BeanUtils.copyProperties(user,result);
+        if(user!=null){
+            BeanUtils.copyProperties(user,result);
+        }
         return result;
     }
 
     @RequestMapping("/list")
     @ResponseBody
     public Object get(int page,int rows){
-        log.info("----------8001----------");
+        log.info("----------8003----------");
         Page params = new Page();
         params.setPages(page);
         params.setSize(rows);
@@ -45,7 +47,9 @@ public class UserController {
         List<User> users = userService.findAllUser(params);
         for(User user : users){
             UserDto dto = new UserDto();
-            BeanUtils.copyProperties(user,dto);
+            if(user != null){
+                BeanUtils.copyProperties(user,dto);
+            }
             dtos.add(dto);
         }
         return dtos;
