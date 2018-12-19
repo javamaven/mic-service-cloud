@@ -3,14 +3,13 @@ package com.seven.chenhaijun.fallback;
 import com.seven.chenhaijun.entity.UserDto;
 import com.seven.chenhaijun.service.UserService;
 import feign.hystrix.FallbackFactory;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
  * Created by ${chenhaijun} on 2018/11/28.
  */
-@Component
+//@Component
 public class UserFallBackFactory implements FallbackFactory<UserService> {
 
     @Override
@@ -27,6 +26,11 @@ public class UserFallBackFactory implements FallbackFactory<UserService> {
             @Override
             public List<UserDto> findList(int page, int rows) {
                 return null;
+            }
+
+            @Override
+            public String getUserSession() {
+                return "";
             }
         };
     }

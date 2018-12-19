@@ -14,6 +14,7 @@
         <module>mic-service-cloud-user-provider-8002</module>
         <module>mic-service-cloud-user-provider-8003</module>
         <module>mic-service-cloud-user-provider-hystrix</module>
+        <module>mic-service-cloud-user-provider-hystrix-config</module>
         <module>mic-service-cloud-dept-provider-7001</module>
         <module>mic-service-cloud-dept-provider-7002</module>
         <module>mic-service-cloud-dept-provider-7003</module>
@@ -23,6 +24,9 @@
         <module>mic-service-cloud-eureka-server-9000</module>
         <module>mic-service-cloud-eureka-server-9001</module>
         <module>mic-service-cloud-eureka-server-9002</module>
+        <module>mic-service-cloud-hystri-dashboard</module>
+        <module>mic-service-cloud-zuul-9527</module>
+        <module>mic-service-cloud-config-6066</module>
     </modules>
 
 
@@ -33,6 +37,8 @@
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>
+        <cloud.version>Finchley.SR2</cloud.version>
+        <boot.version>2.0.4.RELEASE</boot.version>
     </properties>
 
     <dependencyManagement>
@@ -40,14 +46,14 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Dalston.SR1</version>
+                <version>${cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>1.5.9.RELEASE</version>
+                <version>${boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -99,7 +105,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>mic-service-cloud</finalName>
+
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

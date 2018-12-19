@@ -1,7 +1,7 @@
 package com.seven.chenhaijun.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.seven.chenhaijun.Service.IUserService;
+import com.seven.chenhaijun.service.IUserService;
 import com.seven.chenhaijun.entity.User;
 import com.seven.chenhaijun.entity.UserDto;
 import lombok.extern.slf4j.Slf4j;

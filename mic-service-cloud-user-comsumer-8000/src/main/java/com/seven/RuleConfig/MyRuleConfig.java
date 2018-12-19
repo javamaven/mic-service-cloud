@@ -1,7 +1,7 @@
 package com.seven.RuleConfig;
 
-import com.netflix.loadbalancer.BestAvailableRule;
 import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RandomRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,7 +14,7 @@ public class MyRuleConfig {
 
     @Bean
     public IRule myRule(){
-        return new BestAvailableRule();
+        return new RandomRule();
     }
 
 }

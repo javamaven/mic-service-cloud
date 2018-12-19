@@ -2,13 +2,14 @@ package com.seven.chenhaijun.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.seven.chenhaijun.Service.IUserService;
+import com.seven.chenhaijun.service.IUserService;
 import com.seven.chenhaijun.entity.User;
 import com.seven.chenhaijun.entity.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -29,7 +30,7 @@ public class UserController {
     @RequestMapping("/get")
     @ResponseBody
     @HystrixCommand(fallbackMethod = "getFallBackUser")
-    public UserDto get(Integer id){
+    public UserDto get(@RequestParam(value = "id") Integer id){
         if(id == 100){
             throw  new RuntimeException("超出用户权限");
         }

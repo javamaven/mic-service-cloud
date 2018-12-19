@@ -1,0 +1,34 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: mic-service-cloud-zuul
+
+eureka:
+  client:
+    service-url:
+       defaultZone: http://eureka9000.com:9000/eureka,http://eureka9001.com:9001/eureka,http://eureka9002.com:9002/eureka
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+
+
+#微服务 路由配置
+zuul:
+  #ignored-services: microservicecloud-dept
+  ignored-services: "*"  #禁止通过服务名访问
+  prefix: /seven    #前缀
+  routes:
+    user.serviceId: mic-user-provider
+    user.path: /myuser/**
+    dept.serviceId: mic-dept-provider
+    dept.path: /mydept/**
+
+
+
+info:
+  app.name:  mic-service-cloud-zuul
+  company.name: www.chenhaijun.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

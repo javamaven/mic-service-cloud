@@ -2,7 +2,7 @@ package com.seven.chenhaijun.service;
 
 import com.seven.chenhaijun.entity.UserDto;
 import com.seven.chenhaijun.fallback.UserFallBackFactory;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,5 +29,8 @@ public interface UserService {
 
     @RequestMapping(value="/user/list",method = RequestMethod.GET)
     List<UserDto> findList(@RequestParam("page") int page, @RequestParam("rows") int rows);
+
+    @RequestMapping(value="/testSession/get",method = RequestMethod.GET)
+    String getUserSession();
 
 }

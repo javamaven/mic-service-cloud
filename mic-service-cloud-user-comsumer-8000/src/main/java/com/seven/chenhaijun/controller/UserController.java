@@ -19,6 +19,7 @@ public class UserController {
     @Autowired
     RestTemplate restTemplate;
 
+
     @RequestMapping("/getUser")
     public Object get(int page,int rows){
         return restTemplate.getForObject(USER_URL_PREFIX + "/user/get?page="+page+"&rows="+rows, String.class);
@@ -27,5 +28,10 @@ public class UserController {
     @RequestMapping("/getDept")
     public Object getDept(){
         return restTemplate.getForObject(DEPT_URL_PREFIX + "/dept/get", String.class);
+    }
+
+    @RequestMapping("/getSession")
+    public Object getSesson(){
+        return restTemplate.getForObject(USER_URL_PREFIX + "/testSession/get", String.class);
     }
 }

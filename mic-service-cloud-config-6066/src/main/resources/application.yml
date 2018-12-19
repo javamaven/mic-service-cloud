@@ -1,0 +1,21 @@
+server: 
+  port: 6066
+
+management:
+  security:
+    enabled: false
+
+  
+spring:
+  application:
+    name:  mic-service-cloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/javamaven/mic-service.git #GitHub上面的git仓库名字
+  rabbitmq:
+    host: 118.24.147.167
+    port: 5672
+    username: admin
+    password: admin

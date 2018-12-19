@@ -1,7 +1,7 @@
 package com.seven.chenhaijun.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.seven.chenhaijun.Service.IUserService;
+import com.seven.chenhaijun.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
